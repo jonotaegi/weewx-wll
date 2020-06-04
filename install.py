@@ -18,7 +18,7 @@ class WLLInstaller(ExtensionInstaller):
                 'WLL': {
                     'host': '1.2.3.4',
                     'poll_interval': 10,
-                    'driver': 'user.wwl'
+                    'driver': 'user.wll'
                 }
             },
             files=[('bin/user', ['bin/user/wll.py'])])
