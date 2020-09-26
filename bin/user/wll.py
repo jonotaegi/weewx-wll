@@ -36,19 +36,18 @@ DRIVER_VERSION = '0.1'
 
 MM_TO_INCH = 0.0393701
 
-
 try:
-    # Test for WeeWX v4 logging
+    # WeeWX 4 logging
     import weeutil.logger
     import logging
 
     log = logging.getLogger(__name__)
 
-    def logdbg(msg):
-        log.debug(msg)
+    # def logdbg(msg):
+    #     log.debug(msg)
 
-    def loginf(msg):
-        log.info(msg)
+    # def loginf(msg):
+    #     log.info(msg)
 
     def logerr(msg):
         log.error(msg)
@@ -57,14 +56,15 @@ except ImportError:
     # Old-style WeeWX logging
     import syslog
 
+
     def logmsg(level, msg):
         syslog.syslog(level, 'WLL: %s' % msg)
 
-    def logdbg(msg):
-        logmsg(syslog.LOG_DEBUG, msg)
+    # def logdbg(msg):
+    #     logmsg(syslog.LOG_DEBUG, msg)
 
-    def loginf(msg):
-        logmsg(syslog.LOG_INFO, msg)
+    # def loginf(msg):
+    #     logmsg(syslog.LOG_INFO, msg)
 
     def logerr(msg):
         logmsg(syslog.LOG_ERR, msg)
