@@ -124,7 +124,7 @@ class WLL(weewx.drivers.AbstractDevice):
 
                 try:
 
-                    response = requests.get(self.service_url)
+                    response = requests.get(self.service_url, timeout=self.poll_interval)
 
                 except Exception as exception:
 
